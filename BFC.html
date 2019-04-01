@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            width: 600px;
+            position: relative;
+        }
+        .mydiv1{
+            width: 100px;
+            border: 10px solid #066;
+            float: left;
+            background: #f66;
+        }
+        .mydiv2{
+            height: 200px;
+            background: #fcc;
+            overflow: hidden;
+        }
+        .mydiv3{
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            margin-left: 10px;
+            float: left;/*浮动了，但是父元素没有塌陷*/
+        }
+        .mydiv4{
+            width: 20px;
+            height: 150px;
+            background: #000;
+            margin-left: 10px;
+            float: left;/*浮动了，但是父元素没有塌陷*/
+        }
+        .center{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: lightgreen;
+            display: flex;
+            justify-content: space-around;  /*主轴方向如何排列*/
+            align-content: space-around;    /*侧轴方向如何排列，多行无效*/
+            align-items: center;            /*侧轴方向如何排列，多行有效*/
+        }
+        .center div{
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            /*position: absolute;
+            left: 50%;
+            top:  50%;
+            transform: translate(-50px,-50px);*/
+            /*animation: hah 1s linear 0.5s infinite;*/
+            transition:all 1s linear 0.5s;
+        }
+        .center div:hover{
+            opacity: 0;
+        }
+        @keyframes hah {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 100%;
+            }
+        };
+    </style>
+</head>
+<body>
+<div>
+    <div class="mydiv1">
+        <div class="mydiv3"></div>
+        <div class="mydiv4"></div>
+    </div>
+    <div class="mydiv2">mydiv2会随着body的宽度变化</div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="center">
+    <div>居中</div>
+</div>
+</body>
+</html>

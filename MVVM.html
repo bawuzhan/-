@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message.a"/>
+    <div></div>
+    <ul><li></li></ul>
+    {{message.a}}-{{message.b}}/n
+    {{message.n}}
+</div>
+<script src='./vue响应式原理.js'></script>
+<script>
+    let vm =new MVVM({
+        el:'#app',
+        data:{
+            message:{
+                a:'hello',
+                b:'world'
+            }
+        }
+    })
+</script>
+</body>
+</html>
